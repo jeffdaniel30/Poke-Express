@@ -1,0 +1,12 @@
+<ul>
+    {{#each pokemon}}
+        <li>{{this.name}}</li>
+        <li><img src="{{this.img}}" alt="poke_img"></li>
+        <a href="/pokemon/edit/{{this.id}}" class="btn btn-secondary">Edit</a>
+        <a href="/show/{{this.id}}" class="btn btn-secondary">View</a>
+        <form action="/delete/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
+        <input type="submit" value="Delete"/>
+      </form>
+    {{/each}}
+</ul>
+<a href="/new">New Pokemon</a>
